@@ -15,7 +15,7 @@
       "examples": [ 1, 2 ]
     },
     "version_date": {
-      "description": "The date on which the current version of the data collection was released by TEST. Understand?",
+      "description": "The date on which the current version of the data collection was released by TEST. Understand? Good.",
       "type": "string",
       "format": "date",
       "controlledVocab": "N/A",
