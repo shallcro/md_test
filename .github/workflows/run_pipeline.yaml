@@ -1,0 +1,35 @@
+name: Schema Processing Pipeline
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  process_schema:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        cd scripts
+        pip install -r ../requirements.txt
+
+    - name: Run Python script
+      run: |
+        python scripts/generate_current_schema_documentation.py --source-dir $GITHUB_WORKSPACE
+      
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "Mike Shallcross"
+        git config --global user.email "shallcro@umich.edu"
+        git commit -am "Update docs with schema output"
+        git push
