@@ -19,7 +19,7 @@
       "type": "string",
       "format": "date",
       "controlledVocab": "N/A",
-      "usageNotes": "TEST automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged. Got it? OK",
+      "usageNotes": "TEST automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged. Got it? OK. Hello!",
       "examples": [ "2006-03-30", "2019-05-05" ]
     },
     "original_release_date": {
