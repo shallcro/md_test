@@ -1,16 +1,16 @@
-# ICPSR Curated Study Metadata Schema
+# TEST Curated Study Metadata Schema
 
-Metadata Schema for Curated ICPSR Studies as of August 09, 2023.
+Metadata Schema for Curated TEST Studies as of August 09, 2023.
 
 | Property                                                     | Type                      | Description                                                                                                                                                                                                                                                                                                                                                                    |
 | ------------------------------------------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | (R) [Version](#version )                                     | integer                   | The current version number for the data collection.                                                                                                                                                                                                                                                                                                                            |
-| (R) [Version Date](#version_date )                           | string                    | The date on which the current version of the data collection was released by ICPSR.                                                                                                                                                                                                                                                                                            |
-| (O) [Original Release Date](#original_release_date )         | string                    | The date on which the data collection was originally released by ICPSR.                                                                                                                                                                                                                                                                                                        |
+| (R) [Version Date](#version_date )                           | string                    | The date on which the current version of the data collection was released by TEST.                                                                                                                                                                                                                                                                                            |
+| (O) [Original Release Date](#original_release_date )         | string                    | The date on which the data collection was originally released by TEST.                                                                                                                                                                                                                                                                                                        |
 | (R) [Study Title](#study_title )                             | string                    | The authoritative title of the data collection. A full title should include a descriptive string that captures what the data collection contains as well as the geographic scope of and the time period covered by the data collection.                                                                                                                                        |
 | (O) [Alternate Titles](#alternate_titles )                   | array of string           | The alternate name(s) or acronym(s) by which a data collection may be commonly referred.                                                                                                                                                                                                                                                                                       |
-| (O) [Link Title](#link_title )                               | string                    | The title of the item being linked to. Restricted to ICPSR union catalog records only.                                                                                                                                                                                                                                                                                         |
-| (O) [Link Url](#link_url )                                   | string                    | The URL of the item being linked to. Restricted to ICPSR union catalog records only.                                                                                                                                                                                                                                                                                           |
+| (O) [Link Title](#link_title )                               | string                    | The title of the item being linked to. Restricted to TEST union catalog records only.                                                                                                                                                                                                                                                                                         |
+| (O) [Link Url](#link_url )                                   | string                    | The URL of the item being linked to. Restricted to TEST union catalog records only.                                                                                                                                                                                                                                                                                           |
 | (R) [Principal Investigators](#principal_investigators )     | array of object           | The entity primarily responsible for the data collection, in order of importance. A principal investigator (PI) may be a person or an organization. Each data collection requires at least one PI.                                                                                                                                                                             |
 | (O) [Citation](#citation )                                   | string                    | The established bibliographic reference for the data collection.                                                                                                                                                                                                                                                                                                               |
 | (R) [Distributors](#distributors )                           | array of object           | The organization(s) responsible for distributing the data collection. Values include both the name and the location of the Distributor(s).                                                                                                                                                                                                                                     |
@@ -32,7 +32,7 @@ Metadata Schema for Curated ICPSR Studies as of August 09, 2023.
 | (O) [Time Method](#time_method )                             | array of enum (of string) | The time dimension in which the data were collected and framed.                                                                                                                                                                                                                                                                                                                |
 | (O) [Data Source](#data_source )                             | array of string           | The source(s) of the data collection, when that source is external to the data collection and can be independently cited.                                                                                                                                                                                                                                                      |
 | (O) [Collection Mode](#collection_mode )                     | array of enum (of string) | The method(s) used to collect the data.                                                                                                                                                                                                                                                                                                                                        |
-| (O) [Extent of Processing](#extent_of_processing )           | array of enum (of string) | Describes processing activities and checks performed on data collections by ICPSR curation staff.                                                                                                                                                                                                                                                                              |
+| (O) [Extent of Processing](#extent_of_processing )           | array of enum (of string) | Describes processing activities and checks performed on data collections by TEST curation staff.                                                                                                                                                                                                                                                                              |
 | (O) [Weight](#weight )                                       | string                    | A description of the criteria for using weights in the analysis of the data collection.                                                                                                                                                                                                                                                                                        |
 | (O) [Response Rates](#response_rates )                       | string                    | The percentage of respondents in the sample who participated in the data collection.                                                                                                                                                                                                                                                                                           |
 | (O) [Scales](#scales )                                       | array of string           | Any commonly known scales used to collect data for the data collection (e.g., psychological scales such as MMPI and CPI, or occupational scales such as the Census Occupational Codes).                                                                                                                                                                                        |
@@ -40,9 +40,9 @@ Metadata Schema for Curated ICPSR Studies as of August 09, 2023.
 | (O) [Geographic Unit](#geographic_unit )                     | string                    | The smallest geographic unit used in the dataset.                                                                                                                                                                                                                                                                                                                              |
 | (O) [Restrictions](#restrictions )                           | string                    | Information regarding any limitations on use or restrictions on access to the file(s).                                                                                                                                                                                                                                                                                         |
 | (O) [Changes to Collection](#changes_to_collection )         | array of object           | A summary description of changes that have been made to the data collection since its last release.                                                                                                                                                                                                                                                                            |
-| (O) [Series](#series )                                       | string                    | An ICPSR series is a named collection of related studies.                                                                                                                                                                                                                                                                                                                      |
-| (O) [Classifications](#classifications )                     | array of string           | ICPSR classifications address topics broadly, and are meant to be a good starting point for exploring the collection.                                                                                                                                                                                                                                                          |
-| (O) [Filesets](#filesets )                                   | array of object           |  Identifies the grouping of files in a data collection. Every ICPSR data collection with at least one file must have at least one defined Fileset.                                                                                                                                                                                                                             |
+| (O) [Series](#series )                                       | string                    | An TEST series is a named collection of related studies.                                                                                                                                                                                                                                                                                                                      |
+| (O) [Classifications](#classifications )                     | array of string           | TEST classifications address topics broadly, and are meant to be a good starting point for exploring the collection.                                                                                                                                                                                                                                                          |
+| (O) [Filesets](#filesets )                                   | array of object           |  Identifies the grouping of files in a data collection. Every TEST data collection with at least one file must have at least one defined Fileset.                                                                                                                                                                                                                             |
 
 ## <a name="version"></a>1. Version         [Required]
 
@@ -72,7 +72,7 @@ Metadata-only patches do not increment the version number. Changes to the versio
 
 ## <a name="version_date"></a>2. Version Date         [Required]
 
-**Description:** The date on which the current version of the data collection was released by ICPSR.
+**Description:** The date on which the current version of the data collection was released by TEST.
 
 **Type**: `string`
 
@@ -80,7 +80,7 @@ Metadata-only patches do not increment the version number. Changes to the versio
 
 **Controlled Vocabulary:** N/A
 
-**Usage Notes:** ICPSR automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged.
+**Usage Notes:** TEST automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged.
 
 **Examples:** 
 
@@ -94,7 +94,7 @@ Metadata-only patches do not increment the version number. Changes to the versio
 
 ## <a name="original_release_date"></a>3. Original Release Date         [Optional]
 
-**Description:** The date on which the data collection was originally released by ICPSR.
+**Description:** The date on which the data collection was originally released by TEST.
 
 **Type**: `string`
 
@@ -102,7 +102,7 @@ Metadata-only patches do not increment the version number. Changes to the versio
 
 **Controlled Vocabulary:** N/A
 
-**Usage Notes:** ICPSR automatically generates the release date.
+**Usage Notes:** TEST automatically generates the release date.
 
 **Examples:** 
 
@@ -130,9 +130,9 @@ Title Proper:
 
   * The title proper uses title case: all major words are capitalized, while minor words are lowercased.  
 
-  * For new studies, ICPSR starts with the title proper provided by the principal investigator. Most title propers are straightforward about their contents, such as the 'American Community Survey' or the 'Census of Law Enforcement Training Academies.' Some title propers include a more branded description, such as 'Bridge of Faith: Aim4Peace Community-Based Violence Prevention Project or Contents' and 'Contexts of Cyberbullying: An Epidemiologic Study using Electronic Detection and Social Network Analysis.'  
+  * For new studies, TEST starts with the title proper provided by the principal investigator. Most title propers are straightforward about their contents, such as the 'American Community Survey' or the 'Census of Law Enforcement Training Academies.' Some title propers include a more branded description, such as 'Bridge of Faith: Aim4Peace Community-Based Violence Prevention Project or Contents' and 'Contexts of Cyberbullying: An Epidemiologic Study using Electronic Detection and Social Network Analysis.'  
 
-  * For updated studies, ICPSR uses the existing title in production, making changes as necessary to add new years or additional geographical locations. For studies that are part of an ICPSR series, titles remain consistent with the previous series studies.  
+  * For updated studies, TEST uses the existing title in production, making changes as necessary to add new years or additional geographical locations. For studies that are part of an TEST series, titles remain consistent with the previous series studies.  
 
 Geography:  
 
@@ -154,7 +154,7 @@ Time Period:
 
   * For most studies, a single year or range of years is acceptable. Years are written as four digits, including when used in a range (e.g., '1999', '2001-2003', or '1999, 2010, 2015').  
 
-  * Months are included only when part of ICPSR series that have multiple releases, which are otherwise identical, each year. In these cases, months are spelled out (e.g., 'September 2020' instead of '9/2020' or 'Sept. 2020').  
+  * Months are included only when part of TEST series that have multiple releases, which are otherwise identical, each year. In these cases, months are spelled out (e.g., 'September 2020' instead of '9/2020' or 'Sept. 2020').  
 
 **Curator Notes:** Curators are empowered to change the dates in approved titles without metadata librarian approval when the data supports the change. Geography changes should be submitted for approval.    
 
@@ -222,7 +222,7 @@ If 'National,' 'American', 'Congressional' or 'Federal' is in the title, add '[U
 
 ## <a name="link_title"></a>6. Link Title         [Optional]
 
-**Description:** The title of the item being linked to. Restricted to ICPSR union catalog records only.
+**Description:** The title of the item being linked to. Restricted to TEST union catalog records only.
 
 **Type**: `string`
 
@@ -240,7 +240,7 @@ If 'National,' 'American', 'Congressional' or 'Federal' is in the title, add '[U
 
 ## <a name="link_url"></a>7. Link Url         [Optional]
 
-**Description:** The URL of the item being linked to. Restricted to ICPSR union catalog records only.
+**Description:** The URL of the item being linked to. Restricted to TEST union catalog records only.
 
 **Type**: `string`
 
@@ -276,7 +276,7 @@ If 'National,' 'American', 'Congressional' or 'Federal' is in the title, add '[U
 | -------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | (R) [Name](#principal_investigators_items_name )               | string  | The name of the entity primarily responsible for the data collection.                                                                                                                         |
 | (O) [Affiliation](#principal_investigators_items_affiliation ) | string  | The organization with which an individual PI was affiliated at the time of a data collection's publication.                                                                                   |
-| (R) [Order](#principal_investigators_items_order )             | integer | The order of importance for the PIs associated with the data collection -- typically provided to ICPSR by the lead PI. A value of '1' indicates the primary PI, '2' the second, and so forth. |
+| (R) [Order](#principal_investigators_items_order )             | integer | The order of importance for the PIs associated with the data collection -- typically provided to TEST by the lead PI. A value of '1' indicates the primary PI, '2' the second, and so forth. |
 
 #### <a name="principal_investigators_items_name"></a>8.1.1. Name
 
@@ -284,7 +284,7 @@ If 'National,' 'American', 'Congressional' or 'Federal' is in the title, add '[U
 
 **Type**: `string`
 
-**Controlled Vocabulary:** ICPSR utilizes VIAF ([https://viaf.org/](https://viaf.org/)) as its authority control source. The ICPSR Personal Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002)) and Organizational Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004)) can also be used, especially for organization names.
+**Controlled Vocabulary:** TEST utilizes VIAF ([https://viaf.org/](https://viaf.org/)) as its authority control source. The TEST Personal Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10002](https://www.TEST.umich.edu/web/TEST/thesaurus/10002)) and Organizational Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004)) can also be used, especially for organization names.
 
 **Usage Notes:** The authority control for both personal and organizational names is the [Virtual International Authority File, or VIAF](https://viaf.org/), which links the various national authority files (that is, catalogs of authoritative names such as the [Library of Congress Name Authority File](https://authorities.loc.gov/)) into a single international collective. If a principal investigator does not have a VIAF record, another source is used to ensure their inputted name is accurate.  
 
@@ -296,7 +296,7 @@ For names of people:
 
   * Abbreviations are discouraged, especially 'et al.'  'Sr.' and 'Jr.' are allowed.    
 
-For studies that are part of an ICPSR series, PIs remain consistent with the way the same PIs are listed in the previous series studies.    
+For studies that are part of an TEST series, PIs remain consistent with the way the same PIs are listed in the previous series studies.    
 
 **Curator Notes:** Years are not indicated when listing individual PIs, even if VIAF uses them to disambiguate between same-named PIs.
 
@@ -320,7 +320,7 @@ For studies that are part of an ICPSR series, PIs remain consistent with the way
 
 **Type**: `string`
 
-**Controlled Vocabulary:** ICPSR utilizes VIAF ([http://viaf.org/](http://viaf.org/)) as its authority control source. The ICPSR Organization Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004)) may also be used for Organization names.
+**Controlled Vocabulary:** TEST utilizes VIAF ([http://viaf.org/](http://viaf.org/)) as its authority control source. The TEST Organization Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004)) may also be used for Organization names.
 
 **Usage Notes:** The authority control for organizational names is the [Virtual International Authority File, or VIAF](https://viaf.org/), which links the various national authority files (that is, catalogs of authoritative names such as the [Library of Congress Name Authority File](https://authorities.loc.gov/)) into a single international collective. If a principal investigator does not have a VIAF record, another source is used to ensure their inputted name is accurate.  
 
@@ -336,7 +336,7 @@ For names of organizations:
 
   * 'The' is not included at the start of an organization name unless it is actually part of the official name (e.g., 'The New York Times' but not 'The National Institute of Justice').  
 
-For studies that are part of an ICPSR series, PIs remain consistent with the way the same PIs are listed in the previous series studies.  
+For studies that are part of an TEST series, PIs remain consistent with the way the same PIs are listed in the previous series studies.  
 
 **Examples:** 
 
@@ -358,7 +358,7 @@ For studies that are part of an ICPSR series, PIs remain consistent with the way
 
 #### <a name="principal_investigators_items_order"></a>8.1.3. Order
 
-**Description:** The order of importance for the PIs associated with the data collection -- typically provided to ICPSR by the lead PI. A value of '1' indicates the primary PI, '2' the second, and so forth.
+**Description:** The order of importance for the PIs associated with the data collection -- typically provided to TEST by the lead PI. A value of '1' indicates the primary PI, '2' the second, and so forth.
 
 **Type**: `integer`
 
@@ -419,13 +419,13 @@ For additional information about how DOIs for citations are generated, see the '
 
 ```json
 [
-    "University of Michigan. Survey Research Center. Economic Behavior Program. Survey of Consumer Attitudes and Behavior, September 2018. Inter-university Consortium for Political and Social Research [distributor], 2021-11-18. https://doi.org/10.3886/ICPSR38121.v1"
+    "University of Michigan. Survey Research Center. Economic Behavior Program. Survey of Consumer Attitudes and Behavior, September 2018. Inter-university Consortium for Political and Social Research [distributor], 2021-11-18. https://doi.org/10.3886/TEST38121.v1"
 ]
 ```
 
 ```json
 [
-    "Goldin, Claudia, and Lawrence Katz. The 1915 Iowa State Census Project. ICPSR28501-v1. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2010-12-14. http://doi.org/10.3886/ICPSR28501.v1"
+    "Goldin, Claudia, and Lawrence Katz. The 1915 Iowa State Census Project. TEST28501-v1. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2010-12-14. http://doi.org/10.3886/TEST28501.v1"
 ]
 ```
 
@@ -437,7 +437,7 @@ For additional information about how DOIs for citations are generated, see the '
 
 **Curator Notes:** While distributor name and place are separate fields, they always appear in tandem. Therefore, a full distributor would be 'Ann Arbor, MI. Inter-university Consortium for Social and Political Research.'   
 
-Because ICPSR itself is so frequently a distributor, the full name and location of ICPSR is easily accessible via a button in the metadata editor. If a non-ICPSR distributor is necessary, please confirm the standards with the Metadata Librarian. Please note that external distributors are often appropriate for Union Catalog entries.  
+Because TEST itself is so frequently a distributor, the full name and location of TEST is easily accessible via a button in the metadata editor. If a non-TEST distributor is necessary, please confirm the standards with the Metadata Librarian. Please note that external distributors are often appropriate for Union Catalog entries.  
 
 |               | Array restrictions |
 | ------------- | ------------------ |
@@ -460,7 +460,7 @@ Because ICPSR itself is so frequently a distributor, the full name and location 
 
 **Type**: `string`
 
-**Controlled Vocabulary:** The vast majority of the time, the Distributor is the ICPSR. If it is not, consult the Organization Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004))
+**Controlled Vocabulary:** The vast majority of the time, the Distributor is the TEST. If it is not, consult the Organization Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004))
 
 **Examples:** 
 
@@ -526,16 +526,16 @@ Because ICPSR itself is so frequently a distributor, the full name and location 
 
 **Controlled Vocabulary:** N/A
 
-**Usage Notes:** The DOI (digital object identifier) is a persistent identifier provided by DataCite, a DOI registration agency. The DOI name is divided into three parts, separated by slashes ('/'): 'https://doi.org' is the HTTP URL link; followed by '10.3886', a globally unique number that identifies ICPSR as the registrant within the DOI namespace; followed by 'ICPSR', the ICPSR study number, and then the version number. The study number is automatically generated by the ICPSR system and is unique. Current study numbers are five digits, though four digit numbers were once standard and are still acceptable. Studies with fewer than five digits will have zeroes prepended in the DOI, ie. '10.3886/ICPSR02760' for study #2760.
+**Usage Notes:** The DOI (digital object identifier) is a persistent identifier provided by DataCite, a DOI registration agency. The DOI name is divided into three parts, separated by slashes ('/'): 'https://doi.org' is the HTTP URL link; followed by '10.3886', a globally unique number that identifies TEST as the registrant within the DOI namespace; followed by 'TEST', the TEST study number, and then the version number. The study number is automatically generated by the TEST system and is unique. Current study numbers are five digits, though four digit numbers were once standard and are still acceptable. Studies with fewer than five digits will have zeroes prepended in the DOI, ie. '10.3886/TEST02760' for study #2760.
 
 **Examples:** 
 
 ```json
-"https://doi.org/10.3886/ICPSR03025.v2"
+"https://doi.org/10.3886/TEST03025.v2"
 ```
 
 ```json
-"https://doi.org/10.3886/ICPSR06425.v1"
+"https://doi.org/10.3886/TEST06425.v1"
 ```
 
 ## <a name="funding_sources"></a>12. Funding Sources         [Optional]
@@ -563,7 +563,7 @@ Because ICPSR itself is so frequently a distributor, the full name and location 
 
 **Type**: `string`
 
-**Controlled Vocabulary:** If the organization appears in the ICPSR Organization Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004)), the value must conform to the authority list. For organizations not on the authority list, VIAF ([https://viaf.org/](https://viaf.org/)) may be used as an authority control source.
+**Controlled Vocabulary:** If the organization appears in the TEST Organization Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004)), the value must conform to the authority list. For organizations not on the authority list, VIAF ([https://viaf.org/](https://viaf.org/)) may be used as an authority control source.
 
 **Usage Notes:** For multi-level sponsoring or funding agencies, up to three levels are allowed, listed in order of highest (or largest) level first followed by a period, then next highest level followed by a period, and (if needed) a third level. There is no period following the last level listed.
 
@@ -769,11 +769,11 @@ Use past tense when describing the process of collecting the data.  Use present 
 
 **Type**: `array of string`
 
-**Controlled Vocabulary:** Values from the ICPSR Subject Terms Thesaurus ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10001](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10001)) and the ICPSR Personal Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002)) are preferred. Non-thesaurus terms are considered for inclusion if provided.
+**Controlled Vocabulary:** Values from the TEST Subject Terms Thesaurus ([https://www.TEST.umich.edu/web/TEST/thesaurus/10001](https://www.TEST.umich.edu/web/TEST/thesaurus/10001)) and the TEST Personal Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10002](https://www.TEST.umich.edu/web/TEST/thesaurus/10002)) are preferred. Non-thesaurus terms are considered for inclusion if provided.
 
-**Usage Notes:** The Library of Congress Subject Terms ([https://authorities.loc.gov](https://authorities.loc.gov)) is referenced when adding new terms to the ICPSR Subject Thesaurus.
+**Usage Notes:** The Library of Congress Subject Terms ([https://authorities.loc.gov](https://authorities.loc.gov)) is referenced when adding new terms to the TEST Subject Thesaurus.
 
-**Curator Notes:** Non-thesaurus terms can be submitted in the metadata editor and will be reviewed by the metadata librarian. If an ICPSR staff member submits a non-thesaurus term, the metadata librarian will gauge the necessity of this term, check it against the Library of Congress Subject Headings to see if a different related term should be used, and consider it for addition to the ICPSR thesaurus.
+**Curator Notes:** Non-thesaurus terms can be submitted in the metadata editor and will be reviewed by the metadata librarian. If an TEST staff member submits a non-thesaurus term, the metadata librarian will gauge the necessity of this term, check it against the Library of Congress Subject Headings to see if a different related term should be used, and consider it for addition to the TEST thesaurus.
 
 |               | Array restrictions |
 | ------------- | ------------------ |
@@ -812,7 +812,7 @@ Use past tense when describing the process of collecting the data.  Use present 
 
 **Type**: `array of string`
 
-**Controlled Vocabulary:** ICPSR Geographic Names Thesaurus ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10003](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10003)).
+**Controlled Vocabulary:** TEST Geographic Names Thesaurus ([https://www.TEST.umich.edu/web/TEST/thesaurus/10003](https://www.TEST.umich.edu/web/TEST/thesaurus/10003)).
 
 **Usage Notes:** Geographic terms include hierarchies of region, continent, country, and cities.   
 
@@ -1505,7 +1505,7 @@ Must be one of:
 
 ## <a name="extent_of_processing"></a>29. Extent of Processing         [Optional]
 
-**Description:** Describes processing activities and checks performed on data collections by ICPSR curation staff.
+**Description:** Describes processing activities and checks performed on data collections by TEST curation staff.
 
 **Type**: `array of enum (of string)`
 
@@ -1513,12 +1513,12 @@ Must be one of:
 
 | *Option* | *Description* |  
 |----------|---------------|  
-| Checked for undocumented or out-of-date codes | Selected if the ICPSR curator checked at least half of the variables in the data collection for wild codes and corrected or reported in the codebook any wild codes discovered by these checks. |  
-| Created online analysis version with question text | Selected if the ICPSR curator created online analysis version with question text. |  
-| Created variable labels and/or value labels | Selected if the ICPSR curator created variable labels and/or value labels. |  
-| Performed consistency checks | Selected if the ICPSR curator performed any of the following consistency checks on at least half of the variables in the data collection and corrected or reported in the codebook any inconsistencies discovered by these checks:<br> &nbsp; &nbsp;- Checked to see that skip patterns in questionnaires were followed correctly.  <br> &nbsp; &nbsp;- Checked the logical consistency of response patterns across variables. |  
-| Performed recodes and/or calculated derived variables | Selected if the ICPSR curator recoded at least one original variable in the data collection and/or produced at least one new variable derived from one or more original variables. The following kinds of recodes DO NOT qualify for this task:<br> &nbsp; &nbsp;- Recodes performed for reasons of confidentiality. This type of recoding may be mentioned in other sections of the metadata description, usually in Restrictions or Collection Notes.  <br> &nbsp; &nbsp;- Recodes performed to correct errors uncovered by consistency checks.  <br> &nbsp; &nbsp;- Recodes performed to correct errors uncovered by checks for undocumented codes.  <br> &nbsp; &nbsp;- Recodes performed by standardized missing data codes.  <br> &nbsp; &nbsp;- When a unique record identifier is created that is not derived from an original variable. |  
-| Standardized missing values | Selected if the ICPSR curator standardized missing values for at least half of the variables in the data collection. Standardization of missing values means that all 'missing' responses are coded according to a fixed set of rules. There are various ways in which this standardization is typically applied. In some data collections, each kind of 'missing response' may be assigned the same code across all variables, e.g., 'inapplicable' cases may be coded -1 for all variables, 'don't know' may be coded -2, and 'no answer' may be coded -3. In other instances, standards may be specific to the type of variable involved, e.g., blanks may denote missing data for all alphabetic variables, codes -1, -2, and -3 may denote missing data for all dummy variables, and codes 7, 8, and 9 may represent missing data for all other variables. In yet other instances, standard codes may depend on the column width of each variable, e.g., 99 may denote 'no answer' for all two column variables and 999 may denote the same for all three column variables. |  
+| Checked for undocumented or out-of-date codes | Selected if the TEST curator checked at least half of the variables in the data collection for wild codes and corrected or reported in the codebook any wild codes discovered by these checks. |  
+| Created online analysis version with question text | Selected if the TEST curator created online analysis version with question text. |  
+| Created variable labels and/or value labels | Selected if the TEST curator created variable labels and/or value labels. |  
+| Performed consistency checks | Selected if the TEST curator performed any of the following consistency checks on at least half of the variables in the data collection and corrected or reported in the codebook any inconsistencies discovered by these checks:<br> &nbsp; &nbsp;- Checked to see that skip patterns in questionnaires were followed correctly.  <br> &nbsp; &nbsp;- Checked the logical consistency of response patterns across variables. |  
+| Performed recodes and/or calculated derived variables | Selected if the TEST curator recoded at least one original variable in the data collection and/or produced at least one new variable derived from one or more original variables. The following kinds of recodes DO NOT qualify for this task:<br> &nbsp; &nbsp;- Recodes performed for reasons of confidentiality. This type of recoding may be mentioned in other sections of the metadata description, usually in Restrictions or Collection Notes.  <br> &nbsp; &nbsp;- Recodes performed to correct errors uncovered by consistency checks.  <br> &nbsp; &nbsp;- Recodes performed to correct errors uncovered by checks for undocumented codes.  <br> &nbsp; &nbsp;- Recodes performed by standardized missing data codes.  <br> &nbsp; &nbsp;- When a unique record identifier is created that is not derived from an original variable. |  
+| Standardized missing values | Selected if the TEST curator standardized missing values for at least half of the variables in the data collection. Standardization of missing values means that all 'missing' responses are coded according to a fixed set of rules. There are various ways in which this standardization is typically applied. In some data collections, each kind of 'missing response' may be assigned the same code across all variables, e.g., 'inapplicable' cases may be coded -1 for all variables, 'don't know' may be coded -2, and 'no answer' may be coded -3. In other instances, standards may be specific to the type of variable involved, e.g., blanks may denote missing data for all alphabetic variables, codes -1, -2, and -3 may denote missing data for all dummy variables, and codes 7, 8, and 9 may represent missing data for all other variables. In yet other instances, standard codes may depend on the column width of each variable, e.g., 99 may denote 'no answer' for all two column variables and 999 may denote the same for all three column variables. |  
 
 ### <a name="autogenerated_heading_19"></a>29.1. Items
 
@@ -1707,12 +1707,12 @@ This field is only meant to convey specific, known, geography. If there is a var
 
 **Controlled Vocabulary:** N/A
 
-**Usage Notes:** Restrictions informs users that access to certain variables in a collection may be limited, and that they should contact ICPSR directly to inquire about accessing them.
+**Usage Notes:** Restrictions informs users that access to certain variables in a collection may be limited, and that they should contact TEST directly to inquire about accessing them.
 
 **Example:** 
 
 ```json
-"These data may not be used for any purpose other than statistical reporting and analysis. Use of these data to learn the identity of any person or establishment is strictly prohibited. To protect respondent privacy, certain files within this data collection are restricted from general dissemination. To obtain these files, researchers must agree to the terms and conditions of a Restricted Data Use Agreement in accordance with existing ICPSR servicing policies."
+"These data may not be used for any purpose other than statistical reporting and analysis. Use of these data to learn the identity of any person or establishment is strictly prohibited. To protect respondent privacy, certain files within this data collection are restricted from general dissemination. To obtain these files, researchers must agree to the terms and conditions of a Restricted Data Use Agreement in accordance with existing TEST servicing policies."
 ```
 
 ## <a name="changes_to_collection"></a>36. Changes to Collection         [Optional]
@@ -1793,13 +1793,13 @@ This field is only meant to convey specific, known, geography. If there is a var
 
 ## <a name="series"></a>37. Series         [Optional]
 
-**Description:** An ICPSR series is a named collection of related studies.
+**Description:** An TEST series is a named collection of related studies.
 
 **Type**: `string`
 
-**Controlled Vocabulary:** ICPSR Series ([https://www.icpsr.umich.edu/web/ICPSR/search/series](https://www.icpsr.umich.edu/web/ICPSR/search/series))
+**Controlled Vocabulary:** TEST Series ([https://www.TEST.umich.edu/web/TEST/search/series](https://www.TEST.umich.edu/web/TEST/search/series))
 
-**Usage Notes:** Typically the studies in an ICPSR series are produced by the same group of investigators, and either explore different facets of the same topic, or repeat the same investigation over time. Each series name is given in title case (all major words are capitalized, while minor words are lowercased) and ends with the word 'Series'.
+**Usage Notes:** Typically the studies in an TEST series are produced by the same group of investigators, and either explore different facets of the same topic, or repeat the same investigation over time. Each series name is given in title case (all major words are capitalized, while minor words are lowercased) and ends with the word 'Series'.
 
 **Examples:** 
 
@@ -1829,11 +1829,11 @@ This field is only meant to convey specific, known, geography. If there is a var
 
 ## <a name="classifications"></a>38. Classifications         [Optional]
 
-**Description:** ICPSR classifications address topics broadly, and are meant to be a good starting point for exploring the collection.
+**Description:** TEST classifications address topics broadly, and are meant to be a good starting point for exploring the collection.
 
 **Type**: `array of string`
 
-**Controlled Vocabulary:** ICPSR Topic Classifications ([https://www.icpsr.umich.edu/web/pages/ICPSR/access/subject.html](https://www.icpsr.umich.edu/web/pages/ICPSR/access/subject.html))
+**Controlled Vocabulary:** TEST Topic Classifications ([https://www.TEST.umich.edu/web/pages/TEST/access/subject.html](https://www.TEST.umich.edu/web/pages/TEST/access/subject.html))
 
 **Usage Notes:** When there are multiple subclassifications, the smallest (most detailed) one is chosen to represent the data collection.
 
@@ -1857,11 +1857,11 @@ This field is only meant to convey specific, known, geography. If there is a var
 
 ## <a name="filesets"></a>39. Filesets         [Optional]
 
-**Description:**  Identifies the grouping of files in a data collection. Every ICPSR data collection with at least one file must have at least one defined Fileset.
+**Description:**  Identifies the grouping of files in a data collection. Every TEST data collection with at least one file must have at least one defined Fileset.
 
 **Type**: `array of object`
 
-**Usage Notes:** Filesets are used at ICPSR to make a convenient package for description, discovery, preservation and dissemination -- a package that is smaller than the data collection but larger than the individual file. A fileset typically contains a single file of statistical data plus additional files that support the data -- such as setups for statistical software, documentation, and alternative data representations. A data collection may have multiple filesets. Each Fileset has a Number, and may also have a Name and an SDA (Survey Documentation and Analysis) Note.
+**Usage Notes:** Filesets are used at TEST to make a convenient package for description, discovery, preservation and dissemination -- a package that is smaller than the data collection but larger than the individual file. A fileset typically contains a single file of statistical data plus additional files that support the data -- such as setups for statistical software, documentation, and alternative data representations. A data collection may have multiple filesets. Each Fileset has a Number, and may also have a Name and an SDA (Survey Documentation and Analysis) Note.
 
 ### <a name="autogenerated_heading_24"></a>39.1. Items
 
@@ -1881,7 +1881,7 @@ This field is only meant to convey specific, known, geography. If there is a var
 
 **Type**: `integer`
 
-**Usage Notes:** Fileset numbers are typically (but not always) consecutive integers beginning with 1. (In some cases, the number may be drawn from an external resource, such as FIPS state and county codes.) The numbers correspond to the 'part numbers' embedded in ICPSR standard filenames.
+**Usage Notes:** Fileset numbers are typically (but not always) consecutive integers beginning with 1. (In some cases, the number may be drawn from an external resource, such as FIPS state and county codes.) The numbers correspond to the 'part numbers' embedded in TEST standard filenames.
 
 **Examples:** 
 
