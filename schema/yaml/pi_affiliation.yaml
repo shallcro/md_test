@@ -1,6 +1,6 @@
 ---
   $schema: https://json-schema.org/draft-07/schema#
-  $id: https://schemas.icpsr.umich.edu/schema/yaml/pi_affiliation?version=v1
+  $id: https://schemas.TEST.umich.edu/schema/yaml/pi_affiliation?version=v1
   usageNotes: |+
     The authority control for organizational names is the [Virtual International Authority File, or VIAF](https://viaf.org/), which links the various national authority files (that is, catalogs of authoritative names such as the [Library of Congress Name Authority File](https://authorities.loc.gov/)) into a single international collective. If a principal investigator does not have a VIAF record, another source is used to ensure their inputted name is accurate.
     
@@ -16,4 +16,4 @@
 
       * 'The' is not included at the start of an organization name unless it is actually part of the official name (e.g., 'The New York Times' but not 'The National Institute of Justice').
 
-    For studies that are part of an ICPSR series, PIs remain consistent with the way the same PIs are listed in the previous series studies.
+    For studies that are part of an TEST series, PIs remain consistent with the way the same PIs are listed in the previous series studies.

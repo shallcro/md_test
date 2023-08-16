@@ -2,8 +2,8 @@ import os
 import shutil
 import subprocess
 
-mkdocs_yaml = 'C:/icpsr-gitlab/current-schema/docs/mkdocs.yaml'
-html_dir = 'C:/icpsr-gitlab/current-schema/docs/html'
+mkdocs_yaml = 'C:/TEST-gitlab/current-schema/docs/mkdocs.yaml'
+html_dir = 'C:/TEST-gitlab/current-schema/docs/html'
 
 # if os.path.exists(mkdocs_yaml):
 #     print('Removing old config...')
@@ -15,7 +15,7 @@ for theme in ['readthedocs']: #, 'mkdocs', 'bootstrap', 'ivory', 'gitbook', 'boo
     if not os.path.exists(out_dir):
         os.mkdir(out_dir)
 
-    info = ["site_name: ICPSR Curated Study Metadata Schema\n",
+    info = ["site_name: TEST Curated Study Metadata Schema\n",
     "docs_dir: markdown\n",
     "site_dir: html\\{}\n".format(theme),
     "markdown_extensions:\n"
@@ -37,8 +37,8 @@ for theme in ['readthedocs']: #, 'mkdocs', 'bootstrap', 'ivory', 'gitbook', 'boo
     subprocess.run(cmd, shell=True)
 
     # if theme=='readthedocs':
-    #     if not os.path.exists('C:/icpsr-gitlab/current-schema/docs/html/readthedocs/css'):
-    #         os.makedirs('C:/icpsr-gitlab/current-schema/docs/html/readthedocs/css')
-    #     shutil.copy('C:/icpsr-gitlab/current-schema/docs/readthedocs_theme.css', 'C:/icpsr-gitlab/current-schema/docs/html/readthedocs/css/theme.css')
+    #     if not os.path.exists('C:/TEST-gitlab/current-schema/docs/html/readthedocs/css'):
+    #         os.makedirs('C:/TEST-gitlab/current-schema/docs/html/readthedocs/css')
+    #     shutil.copy('C:/TEST-gitlab/current-schema/docs/readthedocs_theme.css', 'C:/TEST-gitlab/current-schema/docs/html/readthedocs/css/theme.css')
 
     

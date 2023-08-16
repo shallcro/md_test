@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.icpsr.umich.edu/schema/icpsr_study_schema?version=v1",
-  "title": "ICPSR Curated Study Metadata Schema",
-  "description": "Metadata Schema for Curated ICPSR Studies",
+  "$id": "https://schemas.TEST.umich.edu/schema/TEST_study_schema?version=v1",
+  "title": "TEST Curated Study Metadata Schema",
+  "description": "Metadata Schema for Curated TEST Studies",
   "type": "object",
   "required": [ "study_title", "principal_investigators", "version", "version_date", "distributors", "summary", "subject_terms", "study_time_periods", "geographic_coverage_areas" ],
   "additionalProperties": false,
@@ -11,30 +11,30 @@
       "description": "The current version number for the data collection.",
       "type": "integer",
       "controlledVocab": "N/A",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/version?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/version?version=v1",
       "examples": [ 1, 2 ]
     },
     "version_date": {
-      "description": "The date on which the current version of the data collection was released by ICPSR.",
+      "description": "The date on which the current version of the data collection was released by TEST.",
       "type": "string",
       "format": "date",
       "controlledVocab": "N/A",
-      "usageNotes": "ICPSR automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged.",
+      "usageNotes": "TEST automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged.",
       "examples": [ "2006-03-30", "2019-05-05" ]
     },
     "original_release_date": {
-      "description": "The date on which the data collection was originally released by ICPSR.",
+      "description": "The date on which the data collection was originally released by TEST.",
       "type": "string",
       "format": "date",
       "controlledVocab": "N/A",
-      "usageNotes": "ICPSR automatically generates the release date.",
+      "usageNotes": "TEST automatically generates the release date.",
       "examples": [ "2001-02-07", "2020-08-12" ]
     },
     "study_title": {
       "description": "The authoritative title of the data collection. A full title should include a descriptive string that captures what the data collection contains as well as the geographic scope of and the time period covered by the data collection.",
       "type": "string",
       "controlledVocab": "N/A",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/study_title?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/study_title?version=v1",
       "examples": [
         "Bridge of Faith: Aim4Peace Community-Based Violence Prevention Project, Kansas City, Missouri, 2014-2017",
         "Health and Relationships Project, United States, 2014-2015",
@@ -58,7 +58,7 @@
       ]
     },
     "link_title": {
-      "description": "The title of the item being linked to. Restricted to ICPSR union catalog records only.",
+      "description": "The title of the item being linked to. Restricted to TEST union catalog records only.",
       "type": "string",
       "controlledVocab": "N/A",
       "usageNotes": "Always appears with the Link URL.",
@@ -66,7 +66,7 @@
       "examples": [ "Cebu Longitudinal Health and Nutrition Survey" ]
     },
     "link_url": {
-      "description": "The URL of the item being linked to. Restricted to ICPSR union catalog records only.",
+      "description": "The URL of the item being linked to. Restricted to TEST union catalog records only.",
       "type": "string",
       "controlledVocab": "N/A",
       "usageNotes": "Always appears with the Link Title.",
@@ -82,8 +82,8 @@
           "name": {
             "description": "The name of the entity primarily responsible for the data collection.",
             "type": "string",
-            "controlledVocab": "ICPSR utilizes VIAF ([https://viaf.org/](https://viaf.org/)) as its authority control source. The ICPSR Personal Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002)) and Organizational Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004)) can also be used, especially for organization names.",
-            "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/pi_name?version=v1",
+            "controlledVocab": "TEST utilizes VIAF ([https://viaf.org/](https://viaf.org/)) as its authority control source. The TEST Personal Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10002](https://www.TEST.umich.edu/web/TEST/thesaurus/10002)) and Organizational Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004)) can also be used, especially for organization names.",
+            "$ref": "https://schemas.TEST.umich.edu/schema/yaml/pi_name?version=v1",
             "curatorNotes": "Years are not indicated when listing individual PIs, even if VIAF uses them to disambiguate between same-named PIs.",
             "examples": [
               "The New York Times",
@@ -94,8 +94,8 @@
           "affiliation": {
             "description": "The organization with which an individual PI was affiliated at the time of a data collection's publication.",
             "type": "string",
-            "controlledVocab": "ICPSR utilizes VIAF ([http://viaf.org/](http://viaf.org/)) as its authority control source. The ICPSR Organization Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004)) may also be used for Organization names.",
-            "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/pi_affiliation?version=v1",
+            "controlledVocab": "TEST utilizes VIAF ([http://viaf.org/](http://viaf.org/)) as its authority control source. The TEST Organization Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004)) may also be used for Organization names.",
+            "$ref": "https://schemas.TEST.umich.edu/schema/yaml/pi_affiliation?version=v1",
             "examples": [
               "University of Michigan",
               "Harvard University. Medical School",
@@ -104,7 +104,7 @@
             ]
           },
           "order": {
-            "description": "The order of importance for the PIs associated with the data collection -- typically provided to ICPSR by the lead PI. A value of '1' indicates the primary PI, '2' the second, and so forth.",
+            "description": "The order of importance for the PIs associated with the data collection -- typically provided to TEST by the lead PI. A value of '1' indicates the primary PI, '2' the second, and so forth.",
             "type": "integer",
             "controlledVocab": "N/A",
             "examples": [1,2,3]
@@ -140,10 +140,10 @@
       "description": "The established bibliographic reference for the data collection.",
       "type": "string",
       "controlledVocab": "N/A",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/citation?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/citation?version=v1",
       "examples": [
-        ["University of Michigan. Survey Research Center. Economic Behavior Program. Survey of Consumer Attitudes and Behavior, September 2018. Inter-university Consortium for Political and Social Research [distributor], 2021-11-18. https://doi.org/10.3886/ICPSR38121.v1"],
-        ["Goldin, Claudia, and Lawrence Katz. The 1915 Iowa State Census Project. ICPSR28501-v1. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2010-12-14. http://doi.org/10.3886/ICPSR28501.v1"]
+        ["University of Michigan. Survey Research Center. Economic Behavior Program. Survey of Consumer Attitudes and Behavior, September 2018. Inter-university Consortium for Political and Social Research [distributor], 2021-11-18. https://doi.org/10.3886/TEST38121.v1"],
+        ["Goldin, Claudia, and Lawrence Katz. The 1915 Iowa State Census Project. TEST28501-v1. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2010-12-14. http://doi.org/10.3886/TEST28501.v1"]
       ]
     },
     "distributors": {
@@ -155,7 +155,7 @@
           "name": {
             "description": "The name of the organization(s) responsible for distributing the data collection.",
             "type": "string",
-            "controlledVocab": "The vast majority of the time, the Distributor is the ICPSR. If it is not, consult the Organization Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004))",
+            "controlledVocab": "The vast majority of the time, the Distributor is the TEST. If it is not, consult the Organization Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004))",
             "examples": [
               "Inter-university Consortium for Political and Social Research",
               "Roper Center for Public Opinion Research"
@@ -173,7 +173,7 @@
         "additionalProperties": false
       },
       "minItems": 1,
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/distributors?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/distributors?version=v1",
       "examples": [
         [
           {
@@ -198,8 +198,8 @@
       "type": "string",
       "format": "uri",
       "controlledVocab": "N/A",
-      "usageNotes": "The DOI (digital object identifier) is a persistent identifier provided by DataCite, a DOI registration agency. The DOI name is divided into three parts, separated by slashes ('/'): 'https://doi.org' is the HTTP URL link; followed by '10.3886', a globally unique number that identifies ICPSR as the registrant within the DOI namespace; followed by 'ICPSR', the ICPSR study number, and then the version number. The study number is automatically generated by the ICPSR system and is unique. Current study numbers are five digits, though four digit numbers were once standard and are still acceptable. Studies with fewer than five digits will have zeroes prepended in the DOI, ie. '10.3886/ICPSR02760' for study #2760.",
-      "examples": [ "https://doi.org/10.3886/ICPSR03025.v2", "https://doi.org/10.3886/ICPSR06425.v1" ]
+      "usageNotes": "The DOI (digital object identifier) is a persistent identifier provided by DataCite, a DOI registration agency. The DOI name is divided into three parts, separated by slashes ('/'): 'https://doi.org' is the HTTP URL link; followed by '10.3886', a globally unique number that identifies TEST as the registrant within the DOI namespace; followed by 'TEST', the TEST study number, and then the version number. The study number is automatically generated by the TEST system and is unique. Current study numbers are five digits, though four digit numbers were once standard and are still acceptable. Studies with fewer than five digits will have zeroes prepended in the DOI, ie. '10.3886/TEST02760' for study #2760.",
+      "examples": [ "https://doi.org/10.3886/TEST03025.v2", "https://doi.org/10.3886/TEST06425.v1" ]
     },
     "funding_sources": {
       "description": "Information on the data collection's funding.",
@@ -210,7 +210,7 @@
           "agency": {
             "description": "The name of the organization that supported the production and/or archiving of the data collection.",
             "type": "string",
-            "controlledVocab": "If the organization appears in the ICPSR Organization Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10004)), the value must conform to the authority list. For organizations not on the authority list, VIAF ([https://viaf.org/](https://viaf.org/)) may be used as an authority control source.",
+            "controlledVocab": "If the organization appears in the TEST Organization Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10004](https://www.TEST.umich.edu/web/TEST/thesaurus/10004)), the value must conform to the authority list. For organizations not on the authority list, VIAF ([https://viaf.org/](https://viaf.org/)) may be used as an authority control source.",
             "usageNotes": "For multi-level sponsoring or funding agencies, up to three levels are allowed, listed in order of highest (or largest) level first followed by a period, then next highest level followed by a period, and (if needed) a third level. There is no period following the last level listed.",
             "curatorNotes": "Generally speaking, if a grant number is not provided, the PI's home institution does not need to be listed as a funding agency. If the PI provides a grant number or other award information, it may be appropriate to.",
             "examples": [
@@ -297,7 +297,7 @@
       "description": "A full description or abstract of the data collection's subject matter or intellectual content. The main goal of the Summary is to give the user a clear sense of what the collection is about, including the purpose of the collection, the major topics covered, and what questions the principal investigators attempted to answer when they conducted the data collection.",
       "type": "string",
       "controlledVocab": "N/A",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/summary?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/summary?version=v1",
       "examples": [
         "In 2014, Chicago Public Schools, looking to reduce the possibility of gun violence among school-aged youth, applied for a grant through the National Institute of Justice. CPS was awarded the Comprehensive School Safety Initiative grant and use said grant to establish the 'Connect and Redirect to Respect' program. This program used student social media data to identify and intervene with students thought to be at higher risk for committing violence. At-risk behaviors included brandishing a weapon, instigating conflict online, signaling gang involvement, and threats towards others. Identified at-risk students would be contacted by a member of the CPS Network Safety Team or the Chicago Police Department's Gang School Safety Team, depending on the risk level of the behavior. To evaluate the efficacy of CRR, the University of Chicago Crime Lab compared outcomes for students enrolled in schools that received the program to outcomes for students enrolled in comparison schools, which did not receive the program. 32 schools were selected for the study, with a total of 44,503 students. Demographic variables included age, race, sex, and ethnicity. Misconduct and academic variables included arrest history, in-school suspensions, out-of-school suspensions, GPA, and attendance days.",
         "The Health and Relationship Project is a study of both spouses in same-sex and different-sex marriages who were legally married and aged 35 to 65 at the time of data collection (2015). There are two parts of this study: a baseline questionnaire and a daily diary questionnaire completed for 10 consecutive days; both components were completed online and spouses were asked to complete the surveys separately. The baseline questionnaire asks participants about a number of topics related to marriage and health, including stress, health status and health behaviors, relationship quality, and how they have approached health problems in the past. The diary questionnaire asks participants a number of questions about the past 24 hours, including daily stress experiences, social interactions, and health behaviors."
@@ -309,10 +309,10 @@
       "items": {
         "type": "string"
       },
-      "curatorNotes": "Non-thesaurus terms can be submitted in the metadata editor and will be reviewed by the metadata librarian. If an ICPSR staff member submits a non-thesaurus term, the metadata librarian will gauge the necessity of this term, check it against the Library of Congress Subject Headings to see if a different related term should be used, and consider it for addition to the ICPSR thesaurus.",
-      "usageNotes": "The Library of Congress Subject Terms ([https://authorities.loc.gov](https://authorities.loc.gov)) is referenced when adding new terms to the ICPSR Subject Thesaurus.",
+      "curatorNotes": "Non-thesaurus terms can be submitted in the metadata editor and will be reviewed by the metadata librarian. If an TEST staff member submits a non-thesaurus term, the metadata librarian will gauge the necessity of this term, check it against the Library of Congress Subject Headings to see if a different related term should be used, and consider it for addition to the TEST thesaurus.",
+      "usageNotes": "The Library of Congress Subject Terms ([https://authorities.loc.gov](https://authorities.loc.gov)) is referenced when adding new terms to the TEST Subject Thesaurus.",
       "minItems": 1,
-      "controlledVocab": "Values from the ICPSR Subject Terms Thesaurus ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10001](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10001)) and the ICPSR Personal Names Authority List ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10002)) are preferred. Non-thesaurus terms are considered for inclusion if provided.",
+      "controlledVocab": "Values from the TEST Subject Terms Thesaurus ([https://www.TEST.umich.edu/web/TEST/thesaurus/10001](https://www.TEST.umich.edu/web/TEST/thesaurus/10001)) and the TEST Personal Names Authority List ([https://www.TEST.umich.edu/web/TEST/thesaurus/10002](https://www.TEST.umich.edu/web/TEST/thesaurus/10002)) are preferred. Non-thesaurus terms are considered for inclusion if provided.",
       "examples": [
         ["child care"],
         ["Social Security", "crime", "victimization"],
@@ -326,8 +326,8 @@
         "type": "string"
       },
       "curatorNotes": "The metadata editor will automatically put this field in alphabetical order, regardless of hierarchy.",
-      "controlledVocab": "ICPSR Geographic Names Thesaurus ([https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10003](https://www.icpsr.umich.edu/web/ICPSR/thesaurus/10003)).",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/geographic_coverage_areas?version=v1",
+      "controlledVocab": "TEST Geographic Names Thesaurus ([https://www.TEST.umich.edu/web/TEST/thesaurus/10003](https://www.TEST.umich.edu/web/TEST/thesaurus/10003)).",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/geographic_coverage_areas?version=v1",
       "minItems": 1,
       "examples": [
         ["United States", "Maryland", "Baltimore"],
@@ -345,7 +345,7 @@
             "description": "The initial date for a time period to which the data refer.",
             "type": "string",
             "controlledVocab": "N/A",
-            "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/study_time_periods_dates?version=v1",
+            "$ref": "https://schemas.TEST.umich.edu/schema/yaml/study_time_periods_dates?version=v1",
             "examples": [
               "2020",
               "2006-03",
@@ -356,7 +356,7 @@
             "description": "The closing date for a time period to which the data refer. If time period information is limited to a single year (e.g., '2020') and more detailed information (such as month) is not available, the same value should be used for both start and end dates.",
             "type": "string",
             "controlledVocab": "N/A",
-            "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/study_time_periods_dates?version=v1",
+            "$ref": "https://schemas.TEST.umich.edu/schema/yaml/study_time_periods_dates?version=v1",
             "examples": [
               "2021",
               "2006-09",
@@ -367,7 +367,7 @@
             "description": "An optional free text description of the time(s) (or 'time frame') to which the data refer, typically used for time periods that cannot be expressed using just numbers, such as seasons or semesters (e.g., 'Fall 2012'), or to add context to a specific Study Time Period when multiple entries are present (e.g., 'Wave 1' or 'Student data').",
             "type": "string",
             "controlledVocab": "N/A",
-            "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/study_time_periods_time_frame?version=v1",
+            "$ref": "https://schemas.TEST.umich.edu/schema/yaml/study_time_periods_time_frame?version=v1",
             "examples": [
               "Wave 1",
               "Spring 2013",
@@ -430,7 +430,7 @@
             "description": "An optional free text description of a period in which the data were collected, typically used for time periods that cannot be expressed using just numbers (e.g., 'Fall 2012') or to add context to a specific Collection Date when multiple entries are present (e.g., 'Wave 1' or 'Student data').",
             "type": "string",
             "controlledVocab": "N/A",
-            "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/collection_dates_time_frame?version=v1",
+            "$ref": "https://schemas.TEST.umich.edu/schema/yaml/collection_dates_time_frame?version=v1",
             "examples": [
               "Wave 1",
               "Spring 2013",
@@ -499,7 +499,7 @@
           "video: film, animation, etc."
         ]
       },
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/data_type?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/data_type?version=v1",
       "examples": [
         ["administrative records data"],
         ["census/enumeration data", "survey data", "video: film, animation, etc."]
@@ -544,7 +544,7 @@
       "description": "Describes the procedures the researchers used to contact subjects and/or to collect the data.",
       "type": "string",
       "controlledVocab": "N/A",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/study_design?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/study_design?version=v1",
       "examples": [
         "Data on organizational culture in each of the 12 courts (Part 1) were obtained by administering the Court Culture Assessment Instrument (CCAI) to all judges with a felony criminal court docket and to all senior court administrators. A total of 224 respondents completed the questionnaire. The CCAI was used to assess five key dimensions of current court culture orientation: (1) dominant case management style, (2) judicial and court staff relations, (3) change management, (4) courthouse leadership, and (5) internal organization. The determination of what culture judges and court administrators desired to establish in the near future was also obtained through the application of the same instrument (CACI) as practitioners were asked to indicate the type of culture in each work area (or content dimension) they would like to see in their court in the next five years. Additionally, surveys were conducted of prosecuting attorneys (Part 2) and public defender attorneys (Part 3) to gauge their views on how well the courts in which they practice achieve the goals of access, fairness, and managerial effectiveness. Every prosecutor and public defender with two years or more experience in representing the state or criminal defendants in felony cases was asked to complete a questionnaire probing their thoughts on how well their court acted to promote access to records through availability and staff cooperation, treating litigants, witnesses, jurors and others fairly, and demonstrating concern for the rights and interests of others in the criminal trial process, including attorney and victims. A total of 334 prosecuting attorneys and 260 public defense attorneys completed the 46-item trial court process survey."
       ]
@@ -606,7 +606,7 @@
         ]
       },
       "controlledVocab": "DDI Controlled Vocabulary for Time Method [(https://ddialliance.org/Specification/DDI-CV/TimeMethod_1.2.html)](https://ddialliance.org/Specification/DDI-CV/TimeMethod_1.2.html)",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/time_method?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/time_method?version=v1",
       "examples": [
         ["Cross-sectional"],
         ["Longitudinal: Cohort / Event-based", "Time Series"]
@@ -667,7 +667,7 @@
       ]
     },
     "extent_of_processing": {
-      "description": "Describes processing activities and checks performed on data collections by ICPSR curation staff.",
+      "description": "Describes processing activities and checks performed on data collections by TEST curation staff.",
       "type": "array",
       "items": {
         "type": "string",
@@ -680,7 +680,7 @@
           "Standardized missing values"
         ]
       },
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/extent_of_processing?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/extent_of_processing?version=v1",
       "examples": [
         [
           "Created variable labels and/or value labels.", 
@@ -724,7 +724,7 @@
       },
       "controlledVocab": "N/A",
       "curatorNotes": "For NIJ studies, if there is no indication that scales are used, enter 'None' in this field. For all other archives, this field is optional.",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/scales?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/scales?version=v1",
       "examples": [
         ["The baseline data collection included one scale - the CES-D index for maternal depression [Cole, J. C., Rabin, A. S., Smith, T. L., and Kaufman, A. S. (2004). Development and validation of a Rasch-derived CES-D short form. Psychological assessment, 16(4), 360]. All scales used for outcomes at ages 1 through 3 are listed in Appendix Tables 1 and 2 in the User Guide. Please refer to the User Guide and P.I. Codebook, available under the 'Data and Documentation' tab, for details."],
         ["Squires, J., Bricker, D. D., and Twombly, E. (2009). Ages and stages questionnaires. Baltimore, MD: Paul H. Brookes.", "Briggs-Gowan, M. J., Carter, A. S., Irwin, J. R., Wachtel, K., and Cicchetti, D. V. (2004). The Brief Infant-Toddler Social and Emotional Assessment: screening for social-emotional problems and delays in competence. Journal of pediatric psychology, 29(2), 143-155.", "Yu, L., Buysse, D. J., Germain, A., Moul, D. E., Stover, A., Dodds, N. E., ... and Pilkonis, P. A. (2012). Development of short forms from the PROMIS sleep disturbance and sleep-related impairment item banks. Behavioral sleep medicine, 10(1), 6-24."]
@@ -748,7 +748,7 @@
       "type": "string",
       "controlledVocab": "N/A",
       "curatorNotes": "For NIJ studies, enter 'None' if no geographic variables are present. For all other archives, this field is optional.",
-      "$ref": "https://schemas.icpsr.umich.edu/schema/yaml/geographic_unit?version=v1",
+      "$ref": "https://schemas.TEST.umich.edu/schema/yaml/geographic_unit?version=v1",
       "examples": [
         "state",
         "Census tract",
@@ -759,9 +759,9 @@
       "description": "Information regarding any limitations on use or restrictions on access to the file(s).",
       "type": "string",
       "controlledVocab": "N/A",
-      "usageNotes": "Restrictions informs users that access to certain variables in a collection may be limited, and that they should contact ICPSR directly to inquire about accessing them.",
+      "usageNotes": "Restrictions informs users that access to certain variables in a collection may be limited, and that they should contact TEST directly to inquire about accessing them.",
       "examples": [
-        "These data may not be used for any purpose other than statistical reporting and analysis. Use of these data to learn the identity of any person or establishment is strictly prohibited. To protect respondent privacy, certain files within this data collection are restricted from general dissemination. To obtain these files, researchers must agree to the terms and conditions of a Restricted Data Use Agreement in accordance with existing ICPSR servicing policies."
+        "These data may not be used for any purpose other than statistical reporting and analysis. Use of these data to learn the identity of any person or establishment is strictly prohibited. To protect respondent privacy, certain files within this data collection are restricted from general dissemination. To obtain these files, researchers must agree to the terms and conditions of a Restricted Data Use Agreement in accordance with existing TEST servicing policies."
       ]
     },
     "changes_to_collection": {
@@ -804,10 +804,10 @@
       ]
     },
     "series": {
-      "description": "An ICPSR series is a named collection of related studies.",
+      "description": "An TEST series is a named collection of related studies.",
       "type": "string",
-      "controlledVocab": "ICPSR Series ([https://www.icpsr.umich.edu/web/ICPSR/search/series](https://www.icpsr.umich.edu/web/ICPSR/search/series))",
-      "usageNotes": "Typically the studies in an ICPSR series are produced by the same group of investigators, and either explore different facets of the same topic, or repeat the same investigation over time. Each series name is given in title case (all major words are capitalized, while minor words are lowercased) and ends with the word 'Series'.",
+      "controlledVocab": "TEST Series ([https://www.TEST.umich.edu/web/TEST/search/series](https://www.TEST.umich.edu/web/TEST/search/series))",
+      "usageNotes": "Typically the studies in an TEST series are produced by the same group of investigators, and either explore different facets of the same topic, or repeat the same investigation over time. Each series name is given in title case (all major words are capitalized, while minor words are lowercased) and ends with the word 'Series'.",
       "examples": [
         ["American National Election Study (ANES) Series"],
         ["Census of Population and Housing, 1990 [United States] Series"],
@@ -816,12 +816,12 @@
       ]
     },
     "classifications": {
-      "description": "ICPSR classifications address topics broadly, and are meant to be a good starting point for exploring the collection.",
+      "description": "TEST classifications address topics broadly, and are meant to be a good starting point for exploring the collection.",
       "type": "array",
       "items": {
         "type": "string"
       },
-      "controlledVocab": "ICPSR Topic Classifications ([https://www.icpsr.umich.edu/web/pages/ICPSR/access/subject.html](https://www.icpsr.umich.edu/web/pages/ICPSR/access/subject.html))",
+      "controlledVocab": "TEST Topic Classifications ([https://www.TEST.umich.edu/web/pages/TEST/access/subject.html](https://www.TEST.umich.edu/web/pages/TEST/access/subject.html))",
       "usageNotes": "When there are multiple subclassifications, the smallest (most detailed) one is chosen to represent the data collection.",
       "examples": [
         ["I.A.2. Census Enumerations: Historical and Contemporary Population Characteristics, United States, American Housing Survey Series"],
@@ -829,7 +829,7 @@
       ]
     },
     "filesets": {
-      "description": " Identifies the grouping of files in a data collection. Every ICPSR data collection with at least one file must have at least one defined Fileset.",
+      "description": " Identifies the grouping of files in a data collection. Every TEST data collection with at least one file must have at least one defined Fileset.",
       "type": "array",
       "items": {
         "type": "object",
@@ -837,7 +837,7 @@
           "number": {
             "description": "A number that uniquely identifies a 'part' or component file that is associated with the data collection.",
             "type": "integer",
-            "usageNotes": "Fileset numbers are typically (but not always) consecutive integers beginning with 1. (In some cases, the number may be drawn from an external resource, such as FIPS state and county codes.) The numbers correspond to the 'part numbers' embedded in ICPSR standard filenames.",
+            "usageNotes": "Fileset numbers are typically (but not always) consecutive integers beginning with 1. (In some cases, the number may be drawn from an external resource, such as FIPS state and county codes.) The numbers correspond to the 'part numbers' embedded in TEST standard filenames.",
             "examples": [1, 2, 3]
           },
           "name": {
@@ -862,7 +862,7 @@
         "dependentRequired": { "name": ["number"] },
         "additionalProperties": false
       },
-      "usageNotes": "Filesets are used at ICPSR to make a convenient package for description, discovery, preservation and dissemination -- a package that is smaller than the data collection but larger than the individual file. A fileset typically contains a single file of statistical data plus additional files that support the data -- such as setups for statistical software, documentation, and alternative data representations. A data collection may have multiple filesets. Each Fileset has a Number, and may also have a Name and an SDA (Survey Documentation and Analysis) Note.",
+      "usageNotes": "Filesets are used at TEST to make a convenient package for description, discovery, preservation and dissemination -- a package that is smaller than the data collection but larger than the individual file. A fileset typically contains a single file of statistical data plus additional files that support the data -- such as setups for statistical software, documentation, and alternative data representations. A data collection may have multiple filesets. Each Fileset has a Number, and may also have a Name and an SDA (Survey Documentation and Analysis) Note.",
       "examples": [
         [
           {

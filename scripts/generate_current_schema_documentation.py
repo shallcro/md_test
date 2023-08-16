@@ -98,7 +98,7 @@ def persist_cache(cache, temp_dir):
 
             # path_components = urlparse(key).path.split('/')
             # file_path = os.path.join(*path_components[1:]) # Remove first element, which is the base URI template
-            file_name = os.path.join(temp_dir, f'icpsr_study_schema_{version}.json')
+            file_name = os.path.join(temp_dir, f'TEST_study_schema_{version}.json')
             os.makedirs(os.path.dirname(file_name), exist_ok=True)
 
             log.debug(f"Writing {title} schema to {file_name}")
@@ -171,7 +171,7 @@ def main():
             content=fi.readlines()
 
         #update schema description to include date
-        descr=[x for x in content if 'Metadata Schema for Curated ICPSR Studies\n' in x][0]
+        descr=[x for x in content if 'Metadata Schema for Curated TEST Studies\n' in x][0]
         descr_index=content.index(descr)
         current_date=datetime.datetime.now()
         content[descr_index]="{} as of {}.\n".format(descr.replace('\n', ''), current_date.strftime("%B %d, %Y"))
@@ -198,7 +198,7 @@ def main():
                     fo.write(line)
 
         #generate html; first set up mkdocs.yaml file
-        mkdocs_info = ["site_name: ICPSR Curated Study Metadata Schema\n",
+        mkdocs_info = ["site_name: TEST Curated Study Metadata Schema\n",
             f"docs_dir: markdown\n",
             f"site_dir: html\n",
             "markdown_extensions:\n",
