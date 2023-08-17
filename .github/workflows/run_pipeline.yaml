@@ -1,9 +1,12 @@
 name: Schema Processing Pipeline
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
-      - '*'  # Trigger on any branch
+      - master
+    condition: ${{ github.event.pull_request.merged == true }}
 
 jobs:
   process_schema:
@@ -32,6 +35,6 @@ jobs:
         git config --global user.name "Mike Shallcross"
         git config --global user.email "shallcro@umich.edu"
         git checkout -b update-docs
-        git add docs/
-        git commit -m "Update docs with schema output"
-        git push origin HEAD:${GITHUB_REF#refs/heads/}  # Push to the current branch
+        git add docs/  
+        git commit -m "Regenerated docs based on schema updates"
+        git push origin HEAD:${{ github.event.pull_request.base.ref }}
