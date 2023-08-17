@@ -32,8 +32,6 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.name "Mike Shallcross"
-        git config --global user.email "shallcro@umich.edu"
         git checkout -b update-docs
         git add docs/  
         git commit -m "Regenerated docs based on schema updates"
