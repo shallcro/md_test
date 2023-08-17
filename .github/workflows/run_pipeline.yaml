@@ -31,7 +31,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git checkout -b update-docs
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git config user.name "${GITHUB_ACTOR}"
         git add docs/  
-        git commit -m "Regenerated docs based on schema updates"
+        git commit -am "Regenerated docs based on schema updates"
         git push origin HEAD:${{ github.event.pull_request.base.ref }}
