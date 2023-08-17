@@ -80,7 +80,7 @@ Metadata-only patches do not increment the version number. Changes to the versio
 
 **Controlled Vocabulary:** N/A
 
-**Usage Notes:** TEST automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged. Got it? OK
+**Usage Notes:** TEST automatically generates this date for data collection additions and updates. For metadata patches, the date remains unchanged. Got it? OK. Hello!
 
 **Examples:** 
 
