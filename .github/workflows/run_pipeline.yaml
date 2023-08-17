@@ -6,7 +6,6 @@ on:
       - closed
     branches:
       - master
-    condition: ${{ github.event.pull_request.merged == true }}
 
 jobs:
   process_schema:
