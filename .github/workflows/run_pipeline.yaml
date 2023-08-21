@@ -36,3 +36,25 @@ jobs:
         git add docs/  
         git commit -am "Regenerated docs based on schema updates"
         git push origin HEAD:${{ github.event.pull_request.base.ref }}
+
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: process-schema
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build and deploy HTML
+        run: |
+          # Navigate to the HTML folder
+          cd docs/html/TEST_study_schema_v1
+
+          # Add any build commands if required here
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/html/TEST_study_schema_v1
