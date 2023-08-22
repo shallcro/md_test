@@ -14,6 +14,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Debug
+        run: |
+          pwd
+          ls -R
+
       - name: Print GITHUB_WORKSPACE
         run: echo "The value of GITHUB_WORKSPACE is $GITHUB_WORKSPACE"
 
@@ -22,5 +27,4 @@ jobs:
       - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Publish docs
         run: |
-          cd $GITHUB_WORKSPACE/docs
-          mkdocs gh-deploy
+          mkdocs gh-deploy -f $GITHUB_WORKSPACE/docs/mkdocs.yml

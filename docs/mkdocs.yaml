@@ -1,6 +1,6 @@
 site_name: TEST Metadata Info
 site_url: https://shallcro.github.io/md_test/
-docs_dir: docs
+docs_dir: .
 nav:
   - Home: index.md
   - Schema: schema/TEST_study_schema_v1.md
