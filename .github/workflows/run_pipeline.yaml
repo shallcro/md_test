@@ -32,7 +32,7 @@ jobs:
         git config user.name "${GITHUB_ACTOR}"
         git add docs/  
         git commit -am "Regenerated docs based on schema updates"
-        git push origin HEAD:${{ github.event.pull_request.base.ref }}
+        git push origin HEAD:refs/heads/mkdocs
 
 
   build-and-deploy:
