@@ -1,10 +1,10 @@
-site_name: TEST Curated Study Metadata Schema
-docs_dir: markdown
-site_dir: html
-markdown_extensions:
-  - tables
-  - markdown.extensions.smarty
-plugins: []
+site_name: TEST Metadata Info
+site_url: https://shallcro.github.io/md_test/
+nav:
+  - Home: index.md
+  - Schema: schema/TEST_study_schema_v1.md
+  - Style Guide: style/style_guide.md
+
 theme:
   name: readthedocs
   prev_next_buttons_location: none

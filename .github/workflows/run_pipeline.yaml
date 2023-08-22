@@ -39,6 +39,8 @@ jobs:
 
 
   build-and-deploy:
+    needs: process_schema
+    
     runs-on: ubuntu-latest
 
     steps:
