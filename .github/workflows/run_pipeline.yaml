@@ -1,11 +1,8 @@
 name: Schema Processing Pipeline
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - master
+  push:
+    branches: [ mkdocs ]
 
 jobs:
   process_schema:
@@ -40,22 +37,16 @@ jobs:
 
   build-and-deploy:
     needs: process_schema
-    
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Build and deploy HTML
-        run: |
-          # Navigate to the HTML folder
-          cd docs/html/TEST_study_schema_v1
-
-          # Add any build commands if required here
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/html/TEST_study_schema_v1
+          fetch-depth: 0
+      - uses: actions/setup-python@v2
+      - run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files
+      - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Publish docs
+        run: mkdocs gh-deploy
