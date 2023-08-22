@@ -161,7 +161,7 @@ def main():
         #generate markdown using modified version of JSON Schema for Humans
         print("\tCreating markdown...")
         md_filename = os.path.basename(os.path.splitext(dereferenced_file)[0])
-        md_file = os.path.join(markdown_dir, f"{md_filename}.md")
+        md_file = os.path.join(markdown_dir, "schema", f"{md_filename}.md")
 
         cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(docs_dir, 'template', 'base.md'), dereferenced_file, md_file)
 

@@ -49,4 +49,6 @@ jobs:
       - run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files
       - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Publish docs
-        run: mkdocs gh-deploy
+        run: |
+          cd $GITHUB_WORKSPACE/docs
+          mkdocs gh-deploy
