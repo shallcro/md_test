@@ -24,4 +24,4 @@ jobs:
       - name: Publish docs
         run: |
           cd $GITHUB_WORKSPACE
-          mkdocs gh-deploy -f ./mkdocs.yml
+          mkdocs gh-deploy --clean --force -f ./mkdocs.yml
