@@ -1,8 +1,11 @@
 name: Schema Processing Pipeline
 
 on:
-  push:
-    branches: [ mkdocs ]
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
 
 jobs:
 
