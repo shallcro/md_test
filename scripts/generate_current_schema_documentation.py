@@ -131,11 +131,10 @@ def main():
         if not os.path.exists(temp_dir):
             os.mkdir(temp_dir)
 
-        mkdocs_yaml = os.path.join(docs_dir, 'mkdocs.yaml')
+        mkdocs_yaml = os.path.join(args.source_dir, 'mkdocs.yaml')
         rtd_css = os.path.join(resource_dir, 'readthedocs_theme.css')
 
-        #markdown_dir = os.path.join(docs_dir, 'markdown')
-        markdown_dir = docs_dir
+        markdown_dir = os.path.join(args.source_dir, 'markdown')
 
         #produce a dereferenced json file
         print("\tProducing cache...")
@@ -163,7 +162,7 @@ def main():
         md_filename = os.path.basename(os.path.splitext(dereferenced_file)[0])
         md_file = os.path.join(markdown_dir, "schema", f"{md_filename}.md")
 
-        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(docs_dir, 'template', 'base.md'), dereferenced_file, md_file)
+        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(resource_dir, 'template', 'base.md'), dereferenced_file, md_file)
 
         subprocess.run(cmd, shell=True, text=True)
 
