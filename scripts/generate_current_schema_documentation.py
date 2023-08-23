@@ -125,15 +125,16 @@ def main():
 
         #set up variables
         docs_dir = os.path.join(args.source_dir, 'docs')
-        html_dir = os.path.join(docs_dir, 'html')
+        resource_dir = os.path.join(args.source_dir, 'resources')
+        #html_dir = os.path.join(docs_dir, 'html')
         temp_dir = os.path.join(args.source_dir, 'temp')
         if not os.path.exists(temp_dir):
             os.mkdir(temp_dir)
 
-        mkdocs_yaml = os.path.join(docs_dir, 'mkdocs.yaml')
-        rtd_css = os.path.join(docs_dir, 'readthedocs_theme.css')
+        mkdocs_yaml = os.path.join(args.source_dir, 'mkdocs.yaml')
+        rtd_css = os.path.join(resource_dir, 'readthedocs_theme.css')
 
-        markdown_dir = os.path.join(docs_dir, 'markdown')
+        markdown_dir = os.path.join(args.source_dir, 'markdown')
 
         #produce a dereferenced json file
         print("\tProducing cache...")
@@ -159,9 +160,9 @@ def main():
         #generate markdown using modified version of JSON Schema for Humans
         print("\tCreating markdown...")
         md_filename = os.path.basename(os.path.splitext(dereferenced_file)[0])
-        md_file = os.path.join(markdown_dir, f"{md_filename}.md")
+        md_file = os.path.join(markdown_dir, "schema", f"{md_filename}.md")
 
-        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(docs_dir, 'template', 'base.md'), dereferenced_file, md_file)
+        cmd = "generate-schema-doc --config custom_template_path={} --config show_toc=false --config show_breadcrumbs=false {} {}".format(os.path.join(resource_dir, 'template', 'base.md'), dereferenced_file, md_file)
 
         subprocess.run(cmd, shell=True, text=True)
 
@@ -196,55 +197,6 @@ def main():
                     fo.write('**Additional Properties**: Not Allowed\n')
                 else:
                     fo.write(line)
-
-        #generate html; first set up mkdocs.yaml file
-        mkdocs_info = ["site_name: TEST Curated Study Metadata Schema\n",
-            f"docs_dir: markdown\n",
-            f"site_dir: html\n",
-            "markdown_extensions:\n",
-            "  - tables\n",
-            "  - markdown.extensions.smarty\n",
-            "plugins: []\n",
-            "theme:\n",
-            "  name: readthedocs\n",
-            "  prev_next_buttons_location: none\n"
-        ]
-
-        #write info to file
-        with open(mkdocs_yaml, 'w', encoding='utf-8') as fo:
-            for line in mkdocs_info:
-                fo.write(line)
-
-        #use docs_dir as current working directory
-        os.chdir(docs_dir)
-
-        #run mkdocs
-        cmd = 'mkdocs build --verbose'
-        subprocess.run(cmd, shell=True)
-
-        #add improved CSS
-        shutil.copy(rtd_css, os.path.join(docs_dir, 'html', 'css', 'theme.css'))
-
-        # #fix missing anchor tags
-        # html_files = glob(os.path.join(html_dir, '**', '*.html'), recursive=True)
-
-        # for html_file in html_files:
-        #     with open(html_file, 'r', encoding='utf-8') as fi:
-        #         html_content = fi.readlines()
-
-        #     with open (html_file, 'w', encoding='utf-8') as fo:
-        #         for line in html_content:
-        #             if '<a name' in line and '</h2>' in line and '</a>' not in line:
-        #                 line = line.replace('</h2>', '</a></h2>')
-        #             elif '<a name' in line and '</h3>' in line and '</a>' not in line:
-        #                 line = line.replace('</h3>', '</a></h3>')
-        #             elif '<a name' in line and '</h4>' in line and '</a>' not in line:
-        #                 line = line.replace('</h4>', '</a></h4>')
-        #             elif '<a name' in line and '</h5>' in line and '</a>' not in line:
-        #                 line = line.replace('</h5>', '</a></h5>')
-        #             elif '<p><strong>Additional properties</strong>: <a href="#" title="Additional Properties not allowed.">[Not allowed]</a></p>' in line:
-        #                 line = '<p><strong>Additional properties</strong>: [Not allowed]</p>\n'
-        #             fo.write(line)
             
         #remove temp folder
         print("\n\nRemoving temp folder...")

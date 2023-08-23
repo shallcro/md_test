@@ -1,59 +1,24 @@
 name: Schema Processing Pipeline
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - master
+  push:
+    branches: [ mkdocs ]
 
 jobs:
-  process_schema:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
-
-    - name: Install dependencies
-      run: |
-        cd scripts
-        pip install -r requirements.txt
-
-    - name: Run Python script
-      run: |
-        python scripts/generate_current_schema_documentation.py --source-dir $GITHUB_WORKSPACE
-
-    - name: Commit and push changes
-      run: |
-        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        git config user.name "${GITHUB_ACTOR}"
-        git add docs/  
-        git commit -am "Regenerated docs based on schema updates"
-        git push origin HEAD:${{ github.event.pull_request.base.ref }}
 
 
   build-and-deploy:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-      - name: Build and deploy HTML
+      - uses: actions/setup-python@v2
+      - run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files
+      - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Publish docs
         run: |
-          # Navigate to the HTML folder
-          cd docs/html/TEST_study_schema_v1
-
-          # Add any build commands if required here
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/html/TEST_study_schema_v1
+          cd $GITHUB_WORKSPACE
+          mkdocs gh-deploy -f ./mkdocs.yml
